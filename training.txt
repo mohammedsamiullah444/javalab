@@ -146,6 +146,96 @@ System.out.print
 
 
 
+public class ShoppingCart{
+private Product[] items = new Product [10];
+private list<Product> items = new ArrayList<>(); 
+public void addProduct(Product product){
+items.add(product);
+}
+
+
+
+
+
+
+##concept Explanation
+-**Harhmap** = stores data as **key value pairs**
+-**key**= unique identifier (like a primary key in database)
+-**value**= the actual data
+**0(1) looks = instant access by key (extremely fast )
+
+** industry analogy: **Dictionary or phone Book**
+-*key* = word (or persons name )
+value = definition (or phone number)
+find definition instantly by looking up the word!
+
+
+#Lamda Expression 9)The "Arrow Function")
+ identity fie as ->
+ anonymous function
+
+SORTING 
+   collections.sort(names,(s1,s2) -> s1.length() - s2.length());
+2. Thread
+   THERAD thread = new thread(() -> system.out.orintln("Running in the thread"));
+3. Event listener
+  button.addActionLister(e -> System.out.println("button"))
+syntax: (parameters) -> expression
+
+4. Multiple Statements (must use curly braces)
+(a,b) -> {
+  int sum = a+b ;
+  System.out.println("Sum:" + sum);
+return sum ;
+};
+
+##module 2: streams (the pipelines)
+### concept explanation
+**stream** = a sequence of elements supporting **functional-style operations**
+**pipeline** = chain of operations: **source -> intermediate operations -> terminal operation**
+-**key principle**: streams are **lazy** (operations don’t execute until terminal operation called)
+### industry analogy: **assembly line in a factory**
+1.**source** = raw materials enter the line
+2.**intermediate operations** = each step process the materials (filter, transform)
+3.**terminal operation** = final product come out
+### the three core operations
+```java
+Import java.util.*;
+Import java.util.stream.*;
+
+Public class streambasics {
+Public static void main(string[] args) {
+List<integer> numbers = arrays.aslist(1,2,3,4,5,6,7,8,9,10);
+
+//1. Filter() – keep only element that match a condition
+//2. Map() – transform each element
+//3. Collect() – collect results into a collection
+
+//for loop approach (imperative)
+System.out.println(“=== FOR LOOP APPROACH ===”);
+List<integer> evensquares = new arraylist<>();
+For (int num : numbers) {
+If (num % ==0) { //filter
+Int square = num * num; //map
+Evensquares.add(square); // collect
+}
+}
+
+# module 4: practice sessions (Hands- on solutions)
+    * Exercise 1: Filter students with Marks > 60
+    *Exercise 2:  how to extract names using map()
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

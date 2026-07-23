@@ -1,0 +1,154 @@
+my sql
+
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 11
+Server version: 8.0.46 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2026, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> CREATE TABLE students (
+    ->     id INT,
+    ->     name VARCHAR(50),
+    ->     age INT
+    -> );
+ERROR 1046 (3D000): No database selected
+mysql> CREATE DATABASE college;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| college            |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| testdb             |
+| vscanner           |
++--------------------+
+7 rows in set (0.01 sec)
+
+mysql> CREATE DATABASE school;
+Query OK, 1 row affected (0.01 sec)
+
+mysql>
+mysql> USE school;
+Database changed
+mysql>
+mysql> CREATE TABLE students (
+    ->     id INT PRIMARY KEY,
+    ->     name VARCHAR(50),
+    ->     age INT,
+    ->     course VARCHAR(50)
+    -> );
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> SHOW TABLES;
++------------------+
+| Tables_in_school |
++------------------+
+| students         |
++------------------+
+1 row in set (0.00 sec)
+
+mysql> CREATE DATABASE college;
+ERROR 1007 (HY000): Can't create database 'college'; database exists
+mysql> USE college;
+Database changed
+mysql>
+mysql> CREATE TABLE students (
+    ->     id INT PRIMARY KEY,
+    ->     name VARCHAR(50),
+    ->     age INT
+    -> );
+Query OK, 0 rows affected (0.04 sec)
+
+mysql>
+mysql> SHOW TABLES;
++-------------------+
+| Tables_in_college |
++-------------------+
+| students          |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT DATABASE();
++------------+
+| DATABASE() |
++------------+
+| college    |
++------------+
+1 row in set (0.00 sec)
+
+mysql> CREATE DATABASE college;
+ERROR 1007 (HY000): Can't create database 'college'; database exists
+mysql> USE college;
+Database changed
+mysql>
+mysql> CREATE TABLE students (
+    ->     id INT PRIMARY KEY,
+    ->     name VARCHAR(50),
+    ->     age INT
+    -> );
+ERROR 1050 (42S01): Table 'students' already exists
+mysql>
+mysql> SHOW TABLES;
++-------------------+
+| Tables_in_college |
++-------------------+
+| students          |
++-------------------+
+1 row in set (0.01 sec)
+
+mysql> SELECT DATABASE();
++------------+
+| DATABASE() |
++------------+
+| college    |
++------------+
+1 row in set (0.00 sec)
+
+mysql> SHOW CREATE DATABASE school;
++----------+----------------------------------------------------------------------------------------------------------------------------------+
+| Database | Create Database                                                                                                                  |
++----------+----------------------------------------------------------------------------------------------------------------------------------+
+| school   | CREATE DATABASE `school` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */ |
++----------+----------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.01 sec)
+
+mysql> CREATE DATABASE college;
+ERROR 1007 (HY000): Can't create database 'college'; database exists
+mysql> USE college;
+Database changed
+mysql>
+mysql> CREATE TABLE students (
+    ->     id INT PRIMARY KEY,
+    ->     name VARCHAR(50),
+    ->     age INT
+    -> );
+ERROR 1050 (42S01): Table 'students' already exists
+mysql>
+mysql> SHOW TABLES;
++-------------------+
+| Tables_in_college |
++-------------------+
+| students          |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT DATABASE();
++------------+
+| DATABASE() |
++------------+
+| college    |
++------------+
+1 row in set (0.00 sec)
+
+mysql>
