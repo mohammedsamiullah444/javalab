@@ -114,7 +114,119 @@ this.cas
 @overide  
 public void displayorder() {
 
+
+
+
+-----------------------------------------------------------------------------
+interface payable{
+    void processPayment(double amount);
+    String getPaymentDetails();
+    void refundPayment(double amount);
+}
+interface Taxable{
+    double calculateTax(double amount);
+    String getTaxDetails();
+}
+interface loggable{
+    void logactivity(String action);
+
+}
+class creditCardPayment implements payable, Taxable, loggable{
+    private String cardNumber;
+    private String cardHolderName;
+    private double taxRate;
+
+    public creditCardPayment(String cardNumber, String cardHolderName, double taxRate) {
+        this.cardNumber = cardNumber;
+        this.cardHolderName = cardHolderName;
+        this.taxRate = taxRate;
+    }
+
+    @Override
+    public void processPayment(double amount) {
+        double tax = calculateTax(amount);
+        double totalAmount = amount + tax;
+        System.out.println("Processing credit card payment of $" + totalAmount + " for " + cardHolderName);
+        logactivity("Processed payment of $" + totalAmount);
+    }
+
+    @Override
+    public String getPaymentDetails() {
+        return "Credit Card Payment - Card Number: " + cardNumber + ", Card Holder: " + cardHolderName;
+    }
+
+    @Override
+    public void refundPayment(double amount) {
+        System.out.println("Refunding credit card payment of $" + amount + " to " + cardHolderName);
+        logactivity("Refunded payment of $" + amount);
+    }
+
+    @Override
+    public double calculateTax(double amount) {
+        return amount * taxRate;
+    }
+
+    @Override
+    public String getTaxDetails() {
+        return "Tax Rate: " + (taxRate * 100) + "%";
+    }
+
+    @Override
+    public void logactivity(String action) {
+        System.out.println("Log: " + action);
+    }
+}
  
+
+
+
+
+System.out.println("\[LOG] Credit Card:" + action + "at" + new java.util.Date());
+}
+}
+
+class P
+
+
+PayPalPayment implement other two classes with same interface 
+
+
+
+COLLECTIONS - DYNAMIC SIZING
+ArrayList<string> courses = new ArrayList<>();
+courses.add("java")
+courses.add("paython")
+course.add("spring boot")
+
+
+BAD: Array with fixed size 
+private product[] items = new product [10];
+
+
+2. ADDING ELEMENTS
+   student.add( "Alice" )
+   student.add("Bob")
+   student.add("charlie")
+   student.add("Dianya")
+   student.add(1,"Eve"); // Insert at index 1
+   system.out.println("After addAll" + student); //[Alice, Eve, Bob,Charlie,Diana,Frank, Grace]
+    
+
+ 3. ACCESSING ELEMENTS
+  String first = student.get(0)
+  String third  =
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------
+
+
+
+
  
 
 

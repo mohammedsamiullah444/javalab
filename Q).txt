@@ -1,0 +1,8 @@
+Q):
+Explain the concept of the security ecosystem  and discuss the key components and objectives and significant in protecting organisational information assessts against modern cyber threats
+
+Q): 
+Explain the concept of Infra Structure as Code IAC discuss its principle, architectures , benefits and importance in modern cloud computing and Devops environments  
+
+Q):wqqqq
+discuss the major vulnabirility in software ,,,,, explain attacks such as dependency and 
