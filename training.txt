@@ -1,0 +1,157 @@
+import java.util.Date;
+class Order {
+    protected String orderId;
+    protected String orderDate;
+    protected double totalAmount;
+
+    // Parent parameterized constructor
+    public Order(String orderId, double totalAmount) {
+        this.orderId = orderId;
+        this.totalAmount = totalAmount;
+        this.orderDate = new Date().toString();
+        System.out.println("Order Created: " + orderId);
+    }
+
+    // Parent method
+    public double calculateDiscount() {
+        // Base discount: 5% for all orders
+        return totalAmount * 0.05;
+    }
+
+    public void displayOrder() {
+        System.out.println("Order ID: " + orderId);
+        System.out.println("Amount: " + totalAmount);
+        System.out.println("Date: " + orderDate);
+    }
+}
+
+class PremiumOrder extends Order {
+    private String membershipTier;
+    private double cashback;
+
+    // Using super() to call parent constructor
+    public PremiumOrder(String orderId, double totalAmount, String member) {
+        super(orderId, totalAmount);
+        this.membershipTier = member;
+        this.cashback = totalAmount * 0.10;
+        System.out.println("Premium Order with " + membershipTier + " Membership");
+    }
+
+    // Method Overriding
+    @Override
+    public double calculateDiscount() {
+        // Get parent's discount (5%) and add premium discount (10%)
+        double baseDiscount = super.calculateDiscount();
+        double premiumDiscount = totalAmount * 0.10;
+        double finalDiscount = baseDiscount + premiumDiscount;
+
+        System.out.println("Premium Discount Applied: " + finalDiscount);
+        return finalDiscount;
+    }
+
+    @Override
+    public void displayOrder() {
+        super.displayOrder();
+        System.out.println("Membership: " + membershipTier);
+        System.out.println("Cashback: " + cashback);
+    }
+}
+
+public class EcomerceApp {
+    public static void main(String[] args) {
+        PremiumOrder order = new PremiumOrder("ORD123", 5000, "Gold");
+        order.displayOrder();
+        System.out.println("Total Discount: " + order.calculateDiscount());
+    }
+}
+
+
+
+JDK...
+
+JAVA DEVELOPMENT KIT:Used to convert high level code to binary (byte code) which is zeros and ones coz computers can not understand high level language.
+
+JRE...
+
+JAVA RUNTIME ENVIRONMENT: is used to compile into byte code
+
+IMP RULES
+----------.
+1. Super() must be the FIRST statement in a child class constructor 
+2. If you don't call super(), java automatically inserts super() ( default constructor).
+3. If the parent doesn't have a default constructor , you MUST explicitly call super(paramators). 
+
+
+Concept explanation
+**method overriding** + subclass provides a **specific implementation** of a method already defined in the parent class.
+**rules:**
+1.	Method signature (name + parameters) must be **exactly** the same.
+2.	Return type must be same or a subtype (convariant return type).
+3.	Access modifier cannot be more restrictive (can be more permissive).
+4.	Cannot override final, static, or private methods.
+
+
+1. compile-time polymorphism ( method  overloading)
+** 
+
+A class can implement multiple interface 
+
+A single interface can be used for multiple classes4
+
+protected String role
+
+
+
+
+
+
+
+Interface 1: Payment Contract 
+interface processPayment(double amount);
+String getPaymentStatus();
+Void refundPayment(double amount);
+
+
+Interface 2 Taxable Contract
+interface Taxable {
+double calculateTax();
+void generateTaxInvoice();
+
+
+Interface 3: Logger Contract
+interface Loggable{
+ void logActivity(String action);
+
+A class can implement multiple interfaces !
+class CreditCardPayment implements Payable, Taxable, Loggable {
+
+private String CardNumber;
+private String status = "pending";
+private double amount;
+private double tax;
+public CreditCardPayment(String CardNUmber){
+this.
+
+public void refundPayment(double amount){
+}
+
+@Override
+
+public double calculateTax() {
+
+this.tax = amount
+
+System.out.println("Tax Invoice:");
+System.out.print
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,135 @@
+Main 4 objectives of OOP
+1. Encapsulation 
+2. Abstraction
+3. Polymorphism
+4. Inheritance
+
+USE OF Encapsulation; We can bundle the data and methods into a single units
+We always make fee private and we and We can provide public methods like get or set method
+We add some validation like extra layer of validation like logging or business logic \ working logic
+
+
+class BankAccount {
+    private double balance;
+
+    public void setBalance(double balance) {
+        if (balance < 0) {
+            throw new IllegalArgumentException("Balance cannot be negative");
+        }
+
+        this.balance = balance;
+        System.out.println("Balance updated to $" + this.balance);
+    }
+
+    public double getBalance() {
+        return this.balance;
+    }
+}
+
+MODULE 1: Inheritance Types (The "Family tree")
+
+Inheritance creates an **"IS-A"** relationship. It promotes **code reusability** and establishes **hierarchical relationships**.
+
+ Single Inheritance: One subclass inherits from one superclass.
+Industry Analogy: Basic Employee -> Developer ( Every developer is an Employee)
+
+class Employee {
+String name;
+double baseSalary;
+void work(){
+System.out.println(name+"is working");
+}
+}
+
+class Developer extends Employee{
+String programmingLanguage;
+
+void writeCode(){
+System.out.println(name + " is writing" + programmingLanguage + "code");
+}
+}
+
+
+
+2. Multilevel Inheritance(Grandparents-> Parent->Child)
+Industry Analogy: Object -> Exception -> RuntimeException -> NullPointerException
+
+
+over riding: Same method name with same parameter 
+Execution starts from object
+
+class Vehicle {
+String brand;
+void start () {System.out.println("Vehicle string..");}
+}
+class Car extends Vehicle {
+int doors;
+void honk() { System.out.println("Beep Beep"); }
+}
+
+class Tesla extends Car {
+Boolean autopilotEnabled;
+void activeAutopilot 
+
+
+*
+3. Hierarichical Inheritance (Parent -> Multiple children)
+
+9
+Module2:
+super Keyword (the parent referance)
+
+
+class Order{
+protected String orderId;
+protected double totalAmount;
+protected String orderData;
+
+public order(String OrderId, double totalAmount) {
+this.orderId = orderId;
+this.totalAmount = totalAmount;
+this.orderDate = new Date().toString();
+System.out.println("Order created:" + orderId);
+}
+
+public double calculate(){
+return totalAmount: *0.05;
+}
+public void displayOrder(){
+System.out.println("order ID" + orderID);
+System.out.println("Amount: ₹" + totalAmount);
+System.out.println("Date:" + orderDate);
+}
+}
+class Premiumorder extends order {
+private String membershipTier;
+private double cashback;
+
+public PrimiumOrder(String orderId, double totalAmount, string membershiptier) {
+super(orderId, total amount);
+this.memebershiptier= membershitptier;
+this.cas
+
+
+@overide  
+public void displayorder() {
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
