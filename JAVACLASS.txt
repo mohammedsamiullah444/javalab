@@ -1,0 +1,447 @@
+DATA TYPES FOR JAVA:
+•	Numeric: int, float, double, short
+•	Boolean: 
+•	Character: string, char
+  1 byte = 8 bits
+ Range: 2^n-1  2^n-1
+Int: 4 bytes = 32 bits
+Import java. Until. *;
+Class mru {
+Public static vid main (string[])
+Programs:
+1)	Swap 2 numbers
+public class Swap {
+    public static void main (String [] args) {
+        int a = 10;
+        int b = 20;
+        int temp;
+
+        temp = a;
+        a = b;
+        b = temp;
+
+
+        System.out.println("a = " + a);
+        System.out.println("b = " + b);
+    }
+}
+Simple intrest:
+Si = (ptr)
+
+Class simple interest{
+Public static void main (string [] args)
+Scanner Sc= new scanner (system.in);
+Int = sc.next int();
+Int t = sc.next int();
+Int r = sc.next int();
+Flat si = (p*t*r) |100;
+s.o.p(si);
+}
+}
+THA:
+1.	Compile the codes discussed in session
+2.	Check prime
+3.	Even odd numbers
+4.	Patterns:
+
+* * * *
+*       *
+*       *
+* * * *
+(0,0), (0,1), (0,2), (0,3)
+(1,0), (1,3)
+(2,0), (2,3)
+(3,0), (3,1), (3,2), (3,3)
+
+For (int i=0, i<n; i++) {
+For (int i=1, i<=4; i++) {
+For (int j=1, j<=4; j++) {
+System.out.print (“*”);
+}
+System.out.println ();
+}
+
+Arrays: elements fo same data types
+Scanner sc = new scanner (system.in);
+Int[] arr=new int[90];
+For (int i=0; i<90; i++) {
+Arr[i]=sc.next int();
+} 
+If try to access the indices out of all size ,
+	It throws index out of bound exception.
+2D array 
+A 2d array (two-dimensional array) is an array of arrays, it stores data in rows and columns
+class Main {
+    public static void main(String[] args) {
+        int[][] arr = {
+            {1, 2},
+            {3, 4}
+       };
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                System.out.print(arr[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+String: string sen= this is cs-alpha
+   Immutable (cannot be changed once created)
+Length():  length of string
+String n sen = sensubstring(0,4)
+s.o.p(sen);
+split();  split(“”);
+trim(); remove leading( trailing spaces).
+String builder & string buffer:
+String str= “MRU”;
+String buider sb=new string builder (str) ;
+Sb.append (“-sof-11”); //,MRU-SOE ||
+String nstr = sb.tostring();
+Searching:
+These are divided into 2 types they :
+1)	Linear search
+2)	Binary search
+Arr: [ 3,2,10,5,4,6]
+if (f/g ==-1) {
+Linear search  line by line search
+Binary search  divide into half ( works only on a sorted array ).
+Flag =-1 i.e the element not found
+Flag =-1 i.e the element found
+1)	Sorting
+2)	Palindrome
+Ex: madam (when we start form reverse also it will be the same word)
+3)	Anagrams
+
+
+
+
+
+
+
+
+construct types:  
+1. default constructor
+2. parameterized constructor
+
+
+1. default constructor
+  it is executed whenever a new object is been created
+in default constructor
+
+constructor overloading:
+multiple same constructors with different parameters
+example:
+
+pizza
+pizza (size, cheese)
+pizza (very, Sze)
+instance variables and static variables:
+instance variables: belongs to each object individually and each object has its own copy (i.e. its own memory address)
+static variable: it belongs to the class itself and here in static variable all the objects share the same copy
+
+rules:
+static methods cannot access instance variables because they don't belong to any object
+instance method can access static variables because the static variables having shared copy
+this keyword cannot be used in the main method
+
+MAIN FOUR OBJECT:
+Encapsulation
+Inheritance
+Abstraction
+Polymorphism
+1.	Encapsulation: 
+Here, in encapsulation you always feel private and you can provide how can public methods like Gitter or setter methods.
+In encapsulation you are having validation you are adding extra layer of validation logging (whatever you are going to perform) 
+Example code:
+class BankAccount {
+    private double balance;
+    
+    // setter with validation
+    public void setBalance (double balance) {
+        if (balance < 0) {
+            throw new IllegalArgumentException(s: "balance cannot be negative!");
+        }
+        this.balance = balance;
+        System.out.println("Balance updated to: ₹" + this.balance);
+    }
+    
+    public double getBalance () {
+        //you can add logging here
+        //System.out.println("Balance accessed at: " + new Date());
+        return this. Balance;
+    }
+}
+2.	Inheritance:
+We can inheritance parent class to child class
+## module 1: inheritance types (the “family tree”)
+### concept overview
+Inheritance creates an **is-a** relationship. It promotes **code reusability**
+1.Single inheritance (parent  child)
+**definition:** One subclass inherits form one superclass.
+**industry analogy:** **basic employee developer**(every developer is any employee)
+Class employee {
+String name;
+Double baseSalary;
+Void work() {
+System.out.println(name + “is working”);
+}
+}
+Class Developer extends employee {
+String programminglanguages;
+Void writeCode() {
+System.out.println(name + “is writing” + programmingLanguage)
+2.Multilevel inheritance(grandparentparentchild)
+**definition:** a chain of inheritance where a class inherits from a parent, which inherits from a grandparent.
+**industry analogy:** **objectexceptionruntimexceptionnullpointerexception**
+(java’s own hierarchy)
+```java
+Class vehicle {
+String brand;
+Void start() { System.out.println(“vehicle starting…”);}
+}
+Class car extends vehicle {
+Int doors;
+Void honk () { System.out.println(“Beep beep!”);}
+}
+Class tesla extends car {
+Boolean autopilotenable;
+Void activateautipilot() { System.out.println(“autopilot engaged”); }
+}
+//tesla can access: brand, start(), doors, honk(), autopilotenabled, activateautopilot()
+
+3.Hierarchical inheritance (parentmultiple children)
+**definition:**
+Java
+Class payment {
+Double amount;
+String transactionid;
+Void processpayment() {
+System.out.println(“processing payment of”)
+
+
+Java
+Class order {
+Protected string ordered;
+Protected double totalamount;
+Protected string orderdate;
+//parent constructor
+Public order(string ordered, double totalamount) {
+This.orderid = orderid;
+This.totalamount=totalamount;
+This.orderdata = newdate().tostring();
+System.out.println(“order created: ”+ orderid);
+}
+// parent method
+Public double calculatediscount)( {
+//base discount: 5% for all orders
+Return totalamount * 0.05;
+}
+Public void displayorder() {
+System.out.println(“order id: “ + orderid);
+System.out.println(“amount: ₹” + totalamount);
+System.out.println(“date: “ +orderdate);
+}
+}
+Class premium order extends order {
+Private string membershiptier;
+Private double cashback;
+//using super() to call parent constructor
+Public premiu
+rmorder(string orderid, double totalamount, string mem
+
+JDK (JAVA DEVELOPMENT KIT):
+JVM: it converts high level language to low level language
+Binary : 0&1’s
+
+Important rules:
+1.	Super () must be the **first** statement in a child class constructor 
+2.	If you don’t call super() , java automatically inserts super() (default constructor).
+3.	If the parent doesn’t have a default constructor, you **must** explicitly call
+Concept explanation
+**method overriding** + subclass provides a **specific implementation** of a method already defined in the parent class.
+**rules:**
+1.	Method signature (name + parameters) must be **exactly** the same.
+2.	Return type must be same or a subtype (convariant return type).
+3.	Access modifier cannot be more restrictive (can be more permissive).
+4.	Cannot override final, static, or private methods.
+Class upipayments extends paymentprocessor {
+Private string upiid;
+Public upipayment(double amount, string upiid) {
+Super(amount);
+This.upiid = upiid;
+}
+@override
+Public Boolean processpayment() {
+System.out.println(“processing upi payment for: “ + upiid);
+//upi-specific validation
+If (!upiid.contains(“@”)) {
+System .out.println(“invalid upi id”)
+Return flase;
+}
+//call parent validation
+Boolean 
+
+A class can implement multiple interfaces	t 
+
+//interface 1: payment contract
+Interface payable {
+Void process payment (double mount);
+String getpaymentstatus ();
+Void refundpayment (double amount);
+}
+//interface 2: taxable contract 
+interface taxable {
+double calculatetax();
+void generatetaxinvoice();
+}
+//interface 3: logger contract
+Interface loggable {
+Void logactivity(string action);
+}
+// A class can implement multiple interfaces!
+Class creditcardpayment implements payable, taxable, loggable {
+Private string cardnumber;
+Private string status = “pending”;
+Private double amount;
+Private double tax;
+Public creditcardpayment(string cardnumber) {
+This.cardnumber = cardnumber
+@override
+Public double calculatetax() {
+//credit card transactions: 18% gst
+This.tax = amount 
+Assignment: impletent the other two classes one is paypal payment and the other is upi payment
+
+```java
+	//  collections – dynamic sizing
+Arraylist<string> courses = new arraylist<>();
+Courses.add(“java”);
+Couses.add(“python”);
+Courses.add(“spring boot”);
+Courses.add(“react”);
+Courses.add(“angular”);
+Courses.add(“docker”);
+Courses.add(“kubernetes”);
+System.out.println(“total courses: ”+ courses.size()); // 7 courses
+```
+### industry analogy: **shopping cart**
+
+```java
+// e-commerce application
+Public class shoppingcart {
+// X BAD: array with fixed size
+Private product [] items = new product [10]; //max 10 items only!
+// GOOD: arraylist with dynamic size
+Private list <product> items = new arraylist<>(); // unlimited items!
+Public void addproduct (product product) {
+Items.add(product); // always works, no sixe
+
+##concept Explanation
+-**Harhmap** = stores data as **key value pairs**
+-**key**= unique identifier (like a primary key in database)
+-**value**= the actual data
+**0(1) looks = instant access by key (extremely fast )
+
+** industry analogy: **Dictionary or phone Book**
+-*key* = word (or persons name )
+value = definition (or phone number)
+find definition instantly by looking up the word!
+Public static void main (string\[] args) {
+//1. Creating a hashmap
+Hashmap<string, integer> studentscores = new hashmap<>();
+Map<string, string> employeedirectory = new hashmap<>();
+Hashmap<string, list<string>> coursestudent = new hashmap<>();
+Hashmap<integer, student> studentdatabase = new hashmap<>();
+&#x20;		//2. Put – adding elements
+&#x20;		studentscores.put(“alice”, 95);
+&#x20;		studentscores.put(“Bob” 87);
+
+#Lamda Expression 9)The "Arrow Function")
+ identity fie as ->
+ anonymous function
+
+SORTING 
+   collections.sort(names,(s1,s2) -> s1.length() - s2.length());
+2. Thread
+   THERAD thread = new thread(() -> system.out.orintln("Running in the thread"));
+3. Event listener
+  button.addActionLister(e -> System.out.println("button"))
+syntax: (parameters) -> expression
+### lambda syntax breakdown
+```java
+// synatax: (parameters) -> expression
+//1. No parameters
+() -> system.out.println(“hello”);
+//2. One parameter (parantheses optinal)
+
+//4. Multiple statements (must use curly braces)
+(a,b) -> {
+Int sum = a+b;
+System.out.println(“sum: ” + sum);
+Return sum;
+};
+//5. Method reference (even shorter!)
+List.foreach(system.out::println); //equivalent to: s -> system.out.println
+
+##module 2: streams (the pipelines)
+### concept explanation
+**stream** = a sequence of elements supporting **functional-style operations**
+**pipeline** = chain of operations: **source -> intermediate operations -> terminal operation**
+-**key principle**: streams are **lazy** (operations don’t execute until terminal operation called)
+### industry analogy: **assembly line in a factory**
+1.**source** = raw materials enter the line
+2.**intermediate operations** = each step process the materials (filter, transform)
+3.**terminal operation** = final product come out
+### the three core operations
+```java
+Import java.util.*;
+Import java.util.stream.*;
+
+Public class streambasics {
+Public static void main(string[] args) {
+List<integer> numbers = arrays.aslist(1,2,3,4,5,6,7,8,9,10);
+
+//1. Filter() – keep only element that match a condition
+//2. Map() – transform each element
+//3. Collect() – collect results into a collection
+
+//for loop approach (imperative)
+System.out.println(“=== FOR LOOP APPROACH ===”);
+List<integer> evensquares = new arraylist<>();
+For (int num : numbers) {
+If (num % ==0) { //filter
+Int square = num * num; //map
+Evensquares.add(square); // collect
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
