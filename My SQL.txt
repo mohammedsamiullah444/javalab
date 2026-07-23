@@ -1,0 +1,82 @@
+DATA BASES!
+
+Module 1; What is relational databse ?
+ A relational database is a type of database that stores data in tables made up of rows and columns.
+
+
+
+| Student_ID | Name  | Age | Course        |
+| ---------- | ----- | --- | ------------- |
+| 101        | Ali   | 19  | CSE           |
+| 102        | Ahmed | 20  | Cybersecurity |
+
+
+
+Table → Stores related data
+Row → One complete record
+Column → A specific type of information/attribute
+Why is it called "relational"?
+
+Because multiple tables can be related to each other using common fields, usually a Primary Key and Foreign Key.
+### module 1: what is relational database?
+### concept
+A **relational database** organizes data into **tables** with **rows** and **columns**, where relationships between tables are established through **keys**.
+### industry analogy: **excel on global scale**
+-**spreadsheet** = single table (good for small data)
+-**database** = hundreds of connected spreadsheets (handles millions of rows)
+-**tables** = different sheets (customers, orders, products)
+-**rows** = individual records (one customer per row)
+-**columns** = attributes (name, email, phone)
+-**primary key** = unique identifier (like a customer id)
+### real-world example: **e-commerce database**
+```
+
+```sql
+--basic create table structure
+Create table table_name (
+Column1 datatype constraints,
+Column2 datatype constraints,
+Cloumn3 datatype constraints,
+…
+Primary key (column1)
+);
+--example: students table
+Create table students (
+Id int auto_increment primary key.
+Name varchar(100) not null,
+Email varchar(100) unique not null.
+Phone varchar(15),
+Date of birth date,
+Is active Boolean default true,
+Marks decimal(5,2) check (marks >=0 and marks <= 100),
+Created at timestamp defalult current_timestamp
+);
+###data types explained with real examples
+
+
+
+7. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
